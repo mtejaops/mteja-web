@@ -35,7 +35,7 @@
             </form>
         </div>
         <div v-else>
-            <h2 class="has-text-success is-size-2 is-family-primary">Password Changed successfully</h2>
+            <h2 class="has-text-success is-size-5 is-family-primary">Password Changed successfully</h2>
         </div>
     </div>
   </div>
