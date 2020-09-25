@@ -5,7 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
  
 Vue.use(VueAxios, axios)
-axios.defaults.withCredentials = true;
+
 
 import "./plugins/buefy";
 Vue.config.productionTip = false
