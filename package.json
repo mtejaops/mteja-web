@@ -12,6 +12,7 @@
     "buefy": "^0.9.3",
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-router": "^3.2.0",

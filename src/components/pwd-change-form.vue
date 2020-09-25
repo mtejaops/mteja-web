@@ -71,22 +71,56 @@ export default {
             console.log("pwd", { password: this.password, confirm: this.repeatPassword });
             console.log("token", this.$route.params.token)
             this.isSubmitting = true;
-            this.axios.post(
-                `http://localhost:5000/api/v1/auth/password/change-password/${this.$route.params.token}`,
-                {
+            fetch(`http://localhost:5000/api/v1/auth/password/change-password/${this.$route.params.token}`,
+            {
+                mode: 'cors',
+                method: "POST",
+                
+                headers: { "Content-Type": "application/json", "origin": "http://localhost:5000" },
+                body: JSON.stringify({
                     newPassword: this.password,
                     repeatPassword: this.repeatPassword
-                }
-            )
+                })
+            })
             .then(result => {
                 this.isSubmitting = false
-                this.success = true
-                console.log("result", result)
+                console.log("res", result.json())
             })
             .catch(error => {
-                this.isSubmitting = false;
-                console.log("error", error)
+                this.isSubmitting = false
+                console.log("error", error.text)
             })
+            // this.axios.post(
+            //     `http://localhost:5000/api/v1/auth/password/change-password/${this.$route.params.token}`,
+                
+            //     {
+            //         newPassword: this.password,
+            //         repeatPassword: this.repeatPassword
+            //     },
+            //     {
+            //         headers: {'crossdomain': true},
+            //     },
+            // )
+            // .then(result => {
+            //     this.isSubmitting = false
+            //     this.success = true
+            //     console.log("result", result)
+            // })
+            // .catch(error => {
+            //     this.isSubmitting = false;
+            //     if (error.response) {
+            //     // client received an error response (5xx, 4xx)
+            //     console.log("response received", error.response.data)
+            //     } else if (error.request) {
+            //     // client never received a response, or request never left
+            //     console.log("response not received", error.request)
+
+            //     } else {
+            //     // anything else
+            //     console.log("response received never", error.message)
+
+            //     }
+            // })
         }
     },
     computed: {
