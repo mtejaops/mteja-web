@@ -102,18 +102,24 @@ export default {
             .then(result => {
                 this.isSubmitting = false
                 this.success = true
+                this.$buefy.snackbar.open({ message: `Password update was successful`, type: "is-success"})
+                this.password = "";
+                this.repeatPassword = "";
                 console.log("result", result)
             })
             .catch(error => {
                 this.isSubmitting = false;
                 if (error.response) {
+                    this.$buefy.snackbar.open({ message: `Password update failed`, type: "is-danger"})
                 // client received an error response (5xx, 4xx)
                 console.log("response received", error.response.data)
                 } else if (error.request) {
+                    this.$buefy.snackbar.open({ message: `An error occurred while trying to update your password. Please try again`, type: "is-danger"})
                 // client never received a response, or request never left
                 console.log("response not received", error.request)
 
                 } else {
+                    this.$buefy.snackbar.open({ message: `Password update failed. Please send another request`, type: "is-warning"})
                 // anything else
                 console.log("response received never", error.message)
 
