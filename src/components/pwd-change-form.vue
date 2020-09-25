@@ -94,8 +94,8 @@ export default {
                 `https://mteja-api-v1.herokuapp.com/api/v1/auth/password/change-password/${this.$route.params.token}`,
                 
                     {
-                        "newPassword": this.password,
-                        "repeatPassword": this.repeatPassword
+                        newPassword: this.password,
+                        repeatPassword: this.repeatPassword
                     }
                 
             )
