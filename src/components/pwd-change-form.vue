@@ -92,12 +92,12 @@ export default {
             // })
             this.axios.post(
                 `https://mteja-api-v1.herokuapp.com/api/v1/auth/password/change-password/${this.$route.params.token}`,
-                JSON.stringify(
+                
                     {
                         "newPassword": this.password,
                         "repeatPassword": this.repeatPassword
                     }
-                )
+                
             )
             .then(result => {
                 this.isSubmitting = false
