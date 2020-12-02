@@ -78,7 +78,7 @@ export default {
                     }
                 
             )
-            .then(result => {
+            .then(() => {
                 this.isSubmitting = false
                 this.success = true
                 this.$buefy.snackbar.open({ message: `Password update was successful`, type: "is-success"})
