@@ -11,6 +11,21 @@ const routes = [
     component: PassChange
   },
   {
+    path: "/report/:token/properties",
+    name: "Report",
+    component: () => import("../views/fullreport.vue")
+  },
+  {
+    path: "/report/:token/property/:property_id",
+    name: "SinglePropertyReport",
+    component: () => import("../views/single_property_report.vue")
+  },
+  {
+    path: "/properties/:property_id/code/:receipt_id",
+    name: "Receipt",
+    component: () => import("../views/tenant_receipt.vue")
+  },
+  {
     path: '*',
     name: '404',
     // route level code-splitting

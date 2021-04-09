@@ -66,7 +66,7 @@ export default {
             sameAsPassword: sameAs('password')
         }
     },
-    methods: {
+methods: {
         changePassword() {
             this.isSubmitting = true;
             this.axios.post(

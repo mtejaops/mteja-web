@@ -5,16 +5,21 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Open+Sans&display=swap');
 
   .h-100 {
-    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .w-25 {
+    width: 25%;
   }
 
 .flex {
   display: flex;
 
-  &.column {
+  &.f-column {
     flex-direction: column;
   }
 
@@ -29,6 +34,37 @@
   &.v-centered {
     align-items: center;
   }
+
+  &.items-center {
+    align-items: center;
+  }
+
+  &.space-around {
+    justify-content: space-around
+  }
+}
+.inline-flex {
+  display: inline-flex;
+
+  &.f-column {
+    flex-direction: column;
+  }
+
+  &.row {
+    flex-direction: row;
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+
+  &.v-centered {
+    align-items: center;
+  }
+
+  &.items-center {
+    align-items: center;
+  }
 }
 
 
@@ -40,7 +76,7 @@ $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
 
-$family-sans-serif: "Open Sans", sans-serif;
+$family-sans-serif: "Nunito Sans", sans-serif;
 $family-primary: "Open sans", sans;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
@@ -61,6 +97,17 @@ $colors: (
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+$card-radius: 1em;
+$card-header-color: white;
+$card-header-background-color: #454545;
+
+.card {
+  border-radius: 6px !important;
+}
+
+.w-50 {
+  width: 50%;
+}
 
 // Import Bulma and Buefy styles
 @import "~bulma";
