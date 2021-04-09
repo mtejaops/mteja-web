@@ -5,6 +5,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
  
 Vue.use(VueAxios, axios)
+Vue.use(require('vue-moment'));
+
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 
 import "./plugins/buefy";
