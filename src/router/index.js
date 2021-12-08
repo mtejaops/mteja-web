@@ -11,6 +11,11 @@ const routes = [
     component: PassChange
   },
   {
+    path: "/admin/full-summary",
+    name: "FullSummaryRoute",
+    component: () => import("../views/full-summary.vue")
+  },
+  {
     path: '*',
     name: '404',
     // route level code-splitting

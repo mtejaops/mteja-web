@@ -29,6 +29,10 @@
   &.v-centered {
     align-items: center;
   }
+
+  &.between {
+    justify-content: space-between;
+  }
 }
 
 
