@@ -167,4 +167,8 @@ export default {
     .properties {
         border-radius: 5px;
     }
+
+    .summary_view {
+        padding: 2em;
+    }
 </style>
